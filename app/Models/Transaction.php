@@ -18,6 +18,11 @@ class Transaction extends Model
         'description'
     ];
 
+    protected $casts =[
+        'transaction_date' => 'date',
+        'amount' => 'integer'
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
@@ -30,7 +35,7 @@ class Transaction extends Model
 
     public function targetWallet(): BelongsTo
     {
-        return $this->belongsTo(Wallet::class, 'targe_wallet_id');
+        return $this->belongsTo(Wallet::class, 'target_wallet_id');
     }
 
     public function category(): BelongsTo
