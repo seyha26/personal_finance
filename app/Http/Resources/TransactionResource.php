@@ -15,7 +15,6 @@ class TransactionResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        Log::info($this->targetWallet);
         return [
             'id' => $this->id,
             'type' => $this->type,
